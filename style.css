@@ -1,0 +1,130 @@
+/* ---------- CUSTOM PROPERTIES ----------*/
+:root {
+    --clr-white: #E6E3DB;
+    --clr-black: #222222;
+    --clr-yellow: #F9F871;
+    --clr-orange: #FFA97D;
+    --clr-pink: #C17D95;
+    --clr-purple: #90708C;
+    --gap: .75rem;
+}
+
+/* ---------- RESET ----------*/
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    font-family: 'Yatra One', cursive;
+    font-size: clamp(1rem, 0.6250rem + 1.6667vw, 1.5rem);
+    font-weight: 400;
+    text-align: center;
+    color: var(--clr-white);
+    background-image: radial-gradient(farthest-corner at 40px 40px, #F9F871, #FFCE6E, #FFA97D, #EC8E8E, #C17D95, #90708C);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+span,
+button {
+    font: inherit;
+}
+
+/* ---------- TYPOGRAPHY ----------*/
+h1,
+#player1Scoreboard,
+#player2Scoreboard {
+    font-size: clamp(2rem, 1.4000rem + 2.6667vw, 2.8rem);
+}
+
+h1 {
+    color: var(--clr-yellow);
+    margin: 0 auto;
+}
+
+#player1Scoreboard,
+#player2Scoreboard {
+    color: #CF6CC7;
+}
+
+/* ---------- LAYOUT ----------*/
+* + * {
+    margin-bottom: var(--gap);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5em;
+    background-color: var(--clr-black);
+}
+
+.container,
+.active,
+button {
+    border-radius: 1rem;
+}
+
+.players {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.dice {
+    width: clamp(5em, 3.5000em + 6.6667vw, 7em);
+}
+
+.active {
+    background-color: #FFA97D33;
+}
+
+.winner {
+    background-color: var(--clr-white);
+    color: var(--clr-black);
+    border-radius: 2rem;
+    border: .3rem dotted var(--clr-orange);
+}
+
+.loser {
+    color: #E6E3DB33;
+}
+
+.active,
+.winner,
+.loser {
+    padding: .25rem;
+}
+
+button {
+    padding: .75rem 1.5rem;
+    border: .3rem solid var(--clr-orange);
+    background-color: var(--clr-purple);
+}
+
+button:hover,
+button:focus {
+    border: .3rem solid #FFA97D99;
+    transform: scale(.9);
+}
+
+#rollBtn {
+    display: block;
+}
+
+#resetBtn {
+    display: none;
+}
