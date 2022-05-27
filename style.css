@@ -137,3 +137,14 @@ button:focus {
 #resetBtn {
     display: none;
 }
+
+/* ---------- MEDIA QUERY ----------*/
+@media (orientation: landscape) and (max-height: 500px) {
+    .container {
+        padding: 1em;
+    }
+    #player1,
+    #player2 {
+        display: flex;
+    }
+}
