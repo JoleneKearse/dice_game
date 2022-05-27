@@ -17,10 +17,27 @@ const rollBtn = document.getElementById('rollBtn')
 const resetBtn = document.getElementById('resetBtn')
 // Program Necessary Variables
 let randomNumber
-// let dieImg = ''
 
 
+
+function determinePlayerTurn() {
+    let randomTurn = Math.floor(Math.random() * 2)
+    console.log(randomTurn)
+
+    if (randomTurn === 0) {
+        message.textContent = 'Player One 🏁'
+    } else if (randomTurn === 1) {
+        player1Turn = false
+        message.textContent = 'Player Two 🏁'
+        player1.classList.remove('active')
+        player2.classList.add('active')
+    }
+}
 // Event Listeners
+window.addEventListener('load', (event) => {
+    determinePlayerTurn()
+})
+
 rollBtn.addEventListener('click', function() {
     // get number from 1-6
     randomNumber = Math.floor(Math.random() * 6) + 1
