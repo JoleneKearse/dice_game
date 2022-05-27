@@ -84,6 +84,12 @@ button {
     gap: 2rem;
 }
 
+#player1,
+#player2 {
+    display: grid;
+    place-items: center;
+}
+
 .dice {
     width: clamp(5em, 3.5000em + 6.6667vw, 7em);
 }
