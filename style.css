@@ -101,6 +101,7 @@ button {
 .winner {
     background-color: var(--clr-white);
     color: var(--clr-black);
+    padding: .1rem .25rem;
     border-radius: 2rem;
     border: .3rem dotted var(--clr-orange);
 }
@@ -109,9 +110,11 @@ button {
     color: #E6E3DB33;
 }
 
-.active,
-.winner,
-.loser {
+.loser-img {
+    opacity: .2;
+}
+
+.active {
     padding: .25rem;
 }
 

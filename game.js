@@ -19,20 +19,6 @@ const resetBtn = document.getElementById('resetBtn')
 let randomNumber
 
 
-
-function determinePlayerTurn() {
-    let randomTurn = Math.floor(Math.random() * 2)
-    console.log(randomTurn)
-
-    if (randomTurn === 0) {
-        message.textContent = 'Player One 🏁'
-    } else if (randomTurn === 1) {
-        player1Turn = false
-        message.textContent = 'Player Two 🏁'
-        player1.classList.remove('active')
-        player2.classList.add('active')
-    }
-}
 // Event Listeners
 window.addEventListener('load', (event) => {
     determinePlayerTurn()
@@ -64,12 +50,14 @@ rollBtn.addEventListener('click', function() {
         removeActiveClassesAtGameEnd()
         player1.classList.add('winner')
         player2.classList.add('loser')
+        img2.classList.add('loser-img')
         changeBtns()
     } else if (player2Score >= 20) {
         message.textContent = 'Player Two Wins! 🎉'
         removeActiveClassesAtGameEnd()
         player2.classList.add('winner')
         player1.classList.add('loser')
+        img1.classList.add('loser-img')
         changeBtns()
     }
 
@@ -82,6 +70,19 @@ resetBtn.addEventListener('click', function(){
 }) 
 
 // Functions
+function determinePlayerTurn() {
+    let randomTurn = Math.floor(Math.random() * 2)
+
+    if (randomTurn === 0) {
+        message.textContent = 'Player One 🏁'
+    } else if (randomTurn === 1) {
+        player1Turn = false
+        message.textContent = 'Player Two 🏁'
+        player1.classList.remove('active')
+        player2.classList.add('active')
+    }
+}
+
 function getDieImg(randomNumber) {
     let dieImg = ''
     switch(randomNumber) {
