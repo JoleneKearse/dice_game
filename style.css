@@ -68,7 +68,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5em;
+    padding: 3.5rem 5em;
     background-color: var(--clr-black);
 }
 
